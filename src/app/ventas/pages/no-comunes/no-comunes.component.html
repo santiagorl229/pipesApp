@@ -7,14 +7,22 @@
 <div class="p-grid">
     <div class="p-col p-md-6 p-sm-9">
         <p-fieldset legend="i18nSelect Pipe" [toggleable]="true">
-            Saludos {{nombre}}, es un placer 
-            {{genero |i18nSelect: invitacionMapa}} 
-            a nuestro evento.
+            <p>
+                Saludos {{nombre}}, es un placer 
+                {{genero |i18nSelect: invitacionMapa}} 
+                a nuestro evento.
+            </p>
+            <button (click)="cambiarCliente()" pButton label="Cambiar Persona">            
+            </button>
         </p-fieldset>
     </div>
     <div class="p-col p-md-6 p-sm-9">
         <p-fieldset legend="i18nPlural Pipe" [toggleable]="true">
-            Content
+            <p>
+                Actualmente tenemos {{clientes.length | i18nPlural:clientesMapa}}
+            </p>
+            <button (click)="borrarCliente()" pButton label="Borrar Persona" class="p-button-danger">
+            </button>
         </p-fieldset>
     </div>
 </div>
