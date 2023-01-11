@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-no-comunes',
@@ -27,5 +28,36 @@ export class NoComunesComponent  {
   borrarCliente(){
     this.clientes.pop();
   }
+  //keyValue Pipe
+  persona={
+    nombre: 'Fernando',
+    edad: 35,
+    direccion: 'Ottawa, Canadá'
+  }
+  heroes =[
+    {
+      nombre: "Superman",
+      vuela: false
+    },
+    {
+      nombre: "Robin",
+      vuela: false
+    },
+    {
+      nombre: "Batman",
+      vuela: false
+    },
+    {
+      nombre: "Hulk",
+      vuela: true
+    }
+  ] 
 
+  //Async Pipe
+  miObservable = interval(1000);
+  valorPromesa= new Promise((resolve,reject)=>{
+    setTimeout(() => {
+      resolve('Tenemos data de promesa')
+    }, 3000);
+  });
 }
